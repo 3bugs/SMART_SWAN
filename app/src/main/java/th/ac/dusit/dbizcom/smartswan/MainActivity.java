@@ -1,5 +1,6 @@
 package th.ac.dusit.dbizcom.smartswan;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
@@ -10,8 +11,9 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setupBottomNav();
+        setupImageMenu();
     }
 
     private void setupBottomNav() {
@@ -54,4 +57,31 @@ public class MainActivity extends AppCompatActivity {
         bottomNavView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    private void setupImageMenu() {
+        ImageView menu01ImageView = findViewById(R.id.menu_01_image_view);
+        menu01ImageView.setOnClickListener(this);
+        ImageView menu02ImageView = findViewById(R.id.menu_02_image_view);
+        menu02ImageView.setOnClickListener(this);
+        ImageView menu03ImageView = findViewById(R.id.menu_03_image_view);
+        menu03ImageView.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.menu_01_image_view:
+                intent = new Intent(this, SduActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menu_02_image_view:
+                intent = new Intent(this, SduActivity.class); //todo:
+                startActivity(intent);
+                break;
+            case R.id.menu_03_image_view:
+                intent = new Intent(this, SduActivity.class); //todo:
+                startActivity(intent);
+                break;
+        }
+    }
 }

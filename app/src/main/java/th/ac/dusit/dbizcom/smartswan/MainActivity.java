@@ -1,32 +1,39 @@
 package th.ac.dusit.dbizcom.smartswan;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import th.ac.dusit.dbizcom.smartswan.fragment.MenuFragment;
+
+public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            FragmentManager fm = getSupportFragmentManager();
+            for(int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+                fm.popBackStack();
+            }
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, new MenuFragment())
+                            .commit();
+                    return true;
+                case R.id.navigation_manual:
                     //todo:
                     return true;
-                case R.id.navigation_dashboard:
-                    //todo:
-                    return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_developer:
                     //todo:
                     return true;
             }
@@ -40,7 +47,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         setupBottomNav();
-        setupImageMenu();
+        loadMenuFragment();
+    }
+
+    private void loadMenuFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new MenuFragment())
+                .commit();
     }
 
     private void setupBottomNav() {
@@ -55,33 +68,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             iconView.setLayoutParams(layoutParams);
         }
         bottomNavView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
-
-    private void setupImageMenu() {
-        ImageView menu01ImageView = findViewById(R.id.menu_01_image_view);
-        menu01ImageView.setOnClickListener(this);
-        ImageView menu02ImageView = findViewById(R.id.menu_02_image_view);
-        menu02ImageView.setOnClickListener(this);
-        ImageView menu03ImageView = findViewById(R.id.menu_03_image_view);
-        menu03ImageView.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        Intent intent;
-        switch (view.getId()) {
-            case R.id.menu_01_image_view:
-                intent = new Intent(this, SduActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.menu_02_image_view:
-                intent = new Intent(this, SduActivity.class); //todo:
-                startActivity(intent);
-                break;
-            case R.id.menu_03_image_view:
-                intent = new Intent(this, SduActivity.class); //todo:
-                startActivity(intent);
-                break;
-        }
     }
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".SduActivity">
+    tools:context=".fragment.MenuMainFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -73,5 +73,4 @@
             app:layout_constraintTop_toBottomOf="@+id/content_text_view"/>
 
     </android.support.constraint.ConstraintLayout>
-</ScrollView
-    >
+</ScrollView>

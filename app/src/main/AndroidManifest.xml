@@ -24,6 +24,12 @@
         </activity>
         <activity android:name=".SduActivity">
         </activity>
+        <activity android:name=".MlActivity">
+        </activity>
+        <activity android:name=".SwanActivity">
+        </activity>
+        <activity android:name=".SduDetailsActivity">
+        </activity>
     </application>
 
 </manifest>

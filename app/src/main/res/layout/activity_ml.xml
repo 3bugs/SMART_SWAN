@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".SduActivity">
+    tools:context=".MlActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,7 +50,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="          มหาวิทยาลัยสวนดุสิตจัดตั้งขึ้นเพื่อเป็นโรงเรียนการเรือนแห่งแรกของประเทศไทย ชื่อ“โรงเรียนมัธยมวิสามัญการเรือน” สังกัดกองอาชีวศึกษา กรมวิชาการ กระทรวงธรรมการ (กระทรวงศึกษาธิการ) เปิดดำเนินการเมื่อวันที่ 17 พฤษภาคม พ.ศ.2477 ที่วังกรมหลวงชุมพรเขตอุดมศักดิ์ (ปัจจุบันเป็นที่ตั้งของมหาวิทยาลัย-เทคโนโลยีราชมงคล วิทยาเขตพณิชยการพระนคร) มีจุดมุ่งหมายเพื่ฝึกอบรมการบ้านการเรือนสำหรับสตรีหลักสูตร 4 ปี"
+            android:text="                หม่อมหลวงปิ่น มาลากุล เกิดเมื่อวันที่ ๒๔ ตุลาคม พ.ศ. ๒๔๔๖ สืบเชื้อสายมาจากต้นราชสกุล
+มาลากุล ณ อยุธยา คือ สมเด็จเจ้าฟ้ามหามาลา กรมพระยาบำราบปรปักษ์ พระเจ้าลูกยาเธอใน
+พระบาทสมเด็จพระพุทธเลิศหล้านภาลัยอันประสูติแต่เจ้าฟ้ากุณฑลทิพยวดี บิดามารดาของ
+ม.ล.ปิ่นคือเจ้าพระยาพระเสด็จสุเรนทราธิบดี (หม่อมราชวงศ์เปีย มาลากุล) และท่านผู้หญิงเสงี่ยม
+(สกุลเดิม วสันตสิงห์) ท่านได้สมรสกับท่านผู้หญิงดุษฎีมาลา มาลากุล ณ อยุธยา (สกุลเดิม ไกรฤกษ์)
+ไม่มีบุตรธิดา"
             android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="@+id/image_view"
             app:layout_constraintStart_toStartOf="@+id/image_view"
@@ -73,5 +78,4 @@
             app:layout_constraintTop_toBottomOf="@+id/content_text_view"/>
 
     </android.support.constraint.ConstraintLayout>
-</ScrollView
-    >
+</ScrollView>

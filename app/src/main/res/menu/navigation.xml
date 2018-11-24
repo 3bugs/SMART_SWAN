@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_manual"
-        android:title="คู่มือการใช้งาน"/>
-
-    <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
         android:title="หน้าหลัก"/>
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_manual"
+        android:icon="@drawable/ic_manual"
+        android:title="คู่มือการใช้งาน"/>
+
+    <item
+        android:id="@+id/navigation_developer"
         android:icon="@drawable/ic_developer"
         android:title="คณะผู้พัฒนา"/>
 
